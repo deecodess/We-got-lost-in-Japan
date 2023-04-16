@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
+    <script src="/easyrtc/easyrtc.js"></script>
+    <script src="https://unpkg.com/networked-aframe@^0.11.0/dist/networked-aframe.min.js"></script>
+  </head>
+  <body>
+    
+    <a-scene>
+      
+        <a-assets>
+            <a-asset-item id="buildings" src="./mee.glb"></a-asset-item>
+          </a-assets>
+
+          
+            <a-entity gltf-model="#buildings" scale="5 5 5 5"></a-entity>
+            <a-assets>
+              <template id="avatar-template">
+                <a-sphere></a-sphere>
+              </template>
+            </a-assets>
+            <a-assets>
+              <template id="avatar-template2">
+                <a-entity gltf-model="#buildings"></a-entity>
+              </template>
+            </a-assets>
+
+          <!-- <a-entity gltf-model="#buildings" scale="4 4 4 4" position="5 0 0"></a-entity> -->
+          
+
+          
+        <a-entity environment="preset: japan" lighting="point" lightPosition="0 1 0"></a-entity>
+
+
+        <!-- <a-entity id="rig" position="0 4 0" rotation="0 180 0" >
+            <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+
+          </a-entity> -->
+          
+    <!-- </a-scene>
+    <a-scene> -->
+      <!-- <a-curve id="track1">
+        <a-curve-point position="-10 2 -3"></a-curve-point>
+        <a-curve-point position="0 1 -3"></a-curve-point>
+        <a-curve-point position="10 2 -3"></a-curve-point>
+      </a-curve> -->
+      <!-- <a-entity gltf-model="#buildings" scale="5 5 5 5" networked="template:#avatar-template;attachTemplateToLocal:false;" camera wasd-controls look-controls></a-entity> -->
+      <!-- <a-entity gltf-model="#buildings" scale="2 2 2 2" alongpath="curve: #track1"></a-asset> -->
+      <a-entity id="rig" position="0 4 0" rotation="0 180 0" >
+        <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+    </a-scene>
+  </body>
+</html>
